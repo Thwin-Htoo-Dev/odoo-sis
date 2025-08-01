@@ -1,0 +1,115 @@
+
+ <odoo>
+  <data>
+
+    <!-- Tree View -->
+    <record id="view_faculty_qualification_list" model="ir.ui.view">
+      <field name="name">faculty.qualification.list</field>
+      <field name="model">sis.faculty.qualification</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="qualification_code"/>
+          <field name="name"/>
+          <field name="level"/>
+          <field name="field_of_study"/>
+          <field name="institution_name"/>
+          <field name="country_id"/>
+          <field name="start_date"/>
+          <field name="end_date"/>
+          <field name="grade"/>
+          <field name="status"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_faculty_qualification_form" model="ir.ui.view">
+      <field name="name">faculty.qualification.form</field>
+      <field name="model">sis.faculty.qualification</field>
+      <field name="arch" type="xml">
+        <form string="Faculty Qualification">
+          <sheet>
+
+            <!-- Top two sections side by side -->
+            <group col="2">
+              
+              <!-- LEFT: Qualification Info -->
+              <group string="Qualification Info">
+                <field name="qualification_code" readonly="1"/>
+                <field name="name"/>
+                <field name="level"/>
+                <field name="field_of_study"/>
+                <field name="institution_name"/>
+                <field name="country_id"/>
+              </group>
+
+              <!-- RIGHT: Dates & Grade -->
+              <group string="Dates &amp; Grade">
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="grade"/>
+              </group>
+
+            </group>
+            <group col="2">
+            <!-- Documents section -->
+            <group string="Documents" col="2">
+              <field name="certificate_file" widget="binary" filename="certificate_filename"/>
+              <field name="certificate_filename"/>
+            </group>
+
+            <!-- Other section -->
+            <group string="Other" col="2">
+              <field name="status"/>
+              <field name="remarks"/>
+            </group>
+            </group>
+
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <record id="view_faculty_qualification_search" model="ir.ui.view">
+        <field name="name">faculty.qualification.search</field>
+        <field name="model">sis.faculty.qualification</field>
+        <field name="arch" type="xml">
+          <search string="Search Qualifications">
+            
+          
+            <field name="name" string="Qualification Name"/>
+            <field name="qualification_code"/>
+            <field name="institution_name"/>
+            <field name="university_text" string="University"/>
+
+            <group expand="0" string="Group By">
+              <filter name="group_level" string="University" context="{'group_by': 'level'}"/>
+              <filter name="group_institution" string="Institution" context="{'group_by': 'institution_name'}"/>
+            </group>
+
+          </search>
+        </field>
+    </record>
+
+
+    <!-- Action -->
+    <record id="action_faculty_qualification" model="ir.actions.act_window">
+      <field name="name">Faculty Qualification</field>
+      <field name="res_model">sis.faculty.qualification</field>
+      <field name="view_mode">list,form</field>
+      <field name="search_view_id" ref="faculty_qualification.view_faculty_qualification_search"/>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="faculty_views_menu"
+              name="Faculty"
+              parent="openeducat_core.menu_op_school_config"
+              sequence="90" />
+
+    <menuitem id="faculty_views_menu_sub"
+              name="Faculty Qualification"
+              action="action_faculty_qualification"
+              parent="faculty_views_menu"
+              sequence="10" />
+
+  </data>
+</odoo>

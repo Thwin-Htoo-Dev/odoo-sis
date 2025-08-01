@@ -1,0 +1,15 @@
+<odoo>
+    <record id="seq_course_major" model="ir.sequence">
+        <field name="name">Major Sequence</field>
+        <field name="code">course.major</field>
+        <field name="prefix">MAJ-</field>
+        <field name="padding">4</field>
+    </record>
+
+    <record id="seq_major_schedule" model="ir.sequence">
+        <field name="name">Schedule Sequence</field>
+        <field name="code">major.schedule</field>
+        <field name="prefix">SCH-</field>
+        <field name="padding">4</field>
+    </record>
+</odoo>

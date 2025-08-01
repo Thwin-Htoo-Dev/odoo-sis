@@ -1,0 +1,8 @@
+/* Resize image in list and form views */
+.o_list_view .custom_avatar img,
+.o_form_view .custom_avatar img {
+    height: 64px !important;
+    width: 64px !important;
+    object-fit: cover;
+    border-radius: 8px;
+}

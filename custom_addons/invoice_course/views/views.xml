@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+    <!-- Action to open Course List -->
+    <record id="action_open_course_list" model="ir.actions.act_window">
+      <field name="name">Courses</field>
+      <field name="res_model">op.course</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Item under Invoicing > Customers -->
+    <menuitem 
+        id="menu_invoicing_customer_course"
+        name="Courses"
+        parent="account.menu_finance_receivables"
+        action="action_open_course_list"
+        sequence="35"/>
+  </data>
+</odoo>

@@ -1,0 +1,21 @@
+<odoo>
+  <record id="view_op_faculty_form_inherit_custom" model="ir.ui.view">
+    <field name="name">op.faculty.form.inherit.custom</field>
+    <field name="model">op.faculty</field>
+    <field name="inherit_id" ref="openeducat_core.view_op_faculty_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='phone']" position="after">
+        <field name="custom_note"/>
+      </xpath>
+      <xpath expr="//field[@name='emp_id']" position="attributes">
+        <attribute name="invisible">1</attribute>
+      </xpath>
+      <xpath expr="//field[@name='visa_info']" position="attributes">
+       <attribute name="invisible">1</attribute>
+      </xpath>
+      <xpath expr="//field[@name='mobile']" position="attributes">
+       <attribute name="invisible">1</attribute>
+      </xpath>
+    </field>
+  </record>
+</odoo>

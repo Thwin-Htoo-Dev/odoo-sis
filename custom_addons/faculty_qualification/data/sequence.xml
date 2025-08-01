@@ -1,0 +1,11 @@
+<odoo>
+  <data noupdate="1">
+    <record id="seq_faculty_qualification" model="ir.sequence">
+      <field name="name">Faculty Qualification</field>
+      <field name="code">sis.faculty.qualification</field>
+      <field name="prefix">QUAL</field>
+      <field name="padding">4</field>
+      <field name="number_next">1</field>
+    </record>
+  </data>
+</odoo>

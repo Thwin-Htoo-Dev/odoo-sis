@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree View Inherit -->
+    <record id="view_op_faculty_inherit_major" model="ir.ui.view">
+        <field name="name">op.faculty.tree.inherit.major</field>
+        <field name="model">op.faculty</field>
+        <field name="inherit_id" ref="openeducat_core.view_op_faculty_tree"/>
+        <field name="arch" type="xml">
+            <field name="email" position="after"> <!-- Change from user_id -->
+                <field name="major_id"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Form View Inherit -->
+    <record id="view_op_faculty_form_inherit_major" model="ir.ui.view">
+        <field name="name">op.faculty.form.inherit.major</field>
+        <field name="model">op.faculty</field>
+        <field name="inherit_id" ref="openeducat_core.view_op_faculty_form"/>
+        <field name="arch" type="xml">
+            <field name="email" position="after"> <!-- Change from user_id -->
+                <field name="major_id"/>
+            </field>
+        </field>
+    </record>
+</odoo>
