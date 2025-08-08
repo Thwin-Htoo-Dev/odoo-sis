@@ -1,0 +1,24 @@
+<odoo>
+  <template id="report_faculty_qualification_template">
+    <!-- <t t-call="web.external_layout"> -->
+      <t t-call="web.html_container">
+      <t t-foreach="docs" t-as="doc">
+        <div class="page">
+          <h2>Faculty Qualification Report</h2>
+          <p><strong>Code:</strong> <span t-esc="doc.qualification_code"/></p>
+          <p><strong>Name:</strong> <span t-esc="doc.name"/></p>
+          <p><strong>University:</strong> <span t-esc="doc.university_text"/></p>
+          <p><strong>Field of Study:</strong> <span t-esc="doc.field_of_study"/></p>
+          <p><strong>Institution:</strong> <span t-esc="doc.institution_name"/></p>
+          <p><strong>Country:</strong> <span t-esc="doc.country_id.name"/></p>
+          <p><strong>Start Date:</strong> <span t-esc="doc.start_date"/></p>
+          <p><strong>End Date:</strong> <span t-esc="doc.end_date"/></p>
+          <p><strong>Grade:</strong> <span t-esc="doc.grade"/></p>
+          <p><strong>Status:</strong> <span t-esc="doc.status"/></p>
+          <p><strong>Remarks:</strong> <span t-esc="doc.remarks"/></p>
+        </div>
+      </t>
+    <!-- </t> -->
+    </t>
+  </template>
+</odoo>

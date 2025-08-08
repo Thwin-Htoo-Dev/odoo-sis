@@ -64,3 +64,5 @@ class FacultyQualification(models.Model):
     def name_get(self):
         return [(rec.id, f"{rec.qualification_code or ''} - {rec.name or ''}") for rec in self]
     
+    def print_report(self):
+        return self.env.ref('faculty_qualification.report_faculty_qualification').report_action(self)

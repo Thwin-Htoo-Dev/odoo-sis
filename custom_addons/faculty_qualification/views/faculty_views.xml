@@ -28,6 +28,13 @@
       <field name="model">sis.faculty.qualification</field>
       <field name="arch" type="xml">
         <form string="Faculty Qualification">
+           <header>
+               <button name="print_report"
+                    string="Print Report"
+                    type="object"
+                    class="btn-primary"
+                    icon ="fa-print"/>
+           </header>
           <sheet>
 
             <!-- Top two sections side by side -->

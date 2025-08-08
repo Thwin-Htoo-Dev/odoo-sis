@@ -9,7 +9,15 @@
         "security/ir.model.access.csv",
         "views/faculty_views.xml",
         "data/sequence.xml",
+        'report/report_faculty_qualification.xml',
+        'report/report_faculty_qualification_template.xml',
     ],
+    # 'assets': {
+    # 'web.report_assets_common': [
+    #     'faculty_qualification/static/fonts/NotoSansMyanmar-Regular.ttf',
+    #     ],
+    # },
+
     "installable": True,
     "application": True,
 }
